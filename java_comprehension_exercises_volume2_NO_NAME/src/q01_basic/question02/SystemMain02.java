@@ -4,6 +4,17 @@ public class SystemMain02 {
 
 	public static void main(String[] args) {
 		//TODO ここから実装する
+		Member member = new Member();
+
+		member.setName("Miura Manabu");
+		member.setAge(30);
+		member.setRank(1);
+		member.rankUp();
+		member.showMember();
+
+		String name = member.getName();
+		int age = member.getAge();
+		int rank = member.getRank();
 
 	}
 }

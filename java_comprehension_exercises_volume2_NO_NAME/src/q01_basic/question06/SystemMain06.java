@@ -13,6 +13,11 @@ public class SystemMain06 {
 
 		System.out.println("---CREATE MEMBER DATA---");
 		//TODO ここから実装する
+		cr.inputNumber();
+		cr.inputString();
+		//
+
+		Member member = new Member(str, num, "なまえ", "年齢", "ランク");
 
 	}
 
