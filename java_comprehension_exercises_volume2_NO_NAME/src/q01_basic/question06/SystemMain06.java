@@ -1,5 +1,7 @@
 package q01_basic.question06;
 
+import java.io.IOException;
+
 public class SystemMain06 {
 
 	public static void main(String[] args) {
@@ -13,11 +15,28 @@ public class SystemMain06 {
 
 		System.out.println("---CREATE MEMBER DATA---");
 		//TODO ここから実装する
-		cr.inputNumber();
-		cr.inputString();
+		try {
+			System.out.print("input id>>");
+			inputId = cr.inputNumber();
+
+			System.out.print("input password>>");
+			inputPassword = cr.inputString();
+
+		} catch (NumberFormatException e) {
+			System.out.println("error!");
+			e.printStackTrace();
+			return;
+
+		} catch (IOException e) {
+			e.printStackTrace();
+
+		}
+
 		//
 
-		Member member = new Member(str, num, "なまえ", "年齢", "ランク");
+		Member member = new Member(inputId, inputPassword, "Miura Manabu", 28, 2);
+
+		member.showMember();
 
 	}
 

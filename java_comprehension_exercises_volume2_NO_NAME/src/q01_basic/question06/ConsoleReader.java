@@ -18,9 +18,10 @@ class ConsoleReader {
 	public String inputString() throws IOException {
 		//TODO ここから実装する
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		//System.out.print("input password>>");
 		String str = reader.readLine();
 
-		return "";
+		return str;
 	}
 
 	/**
@@ -33,10 +34,11 @@ class ConsoleReader {
 	public int inputNumber() throws IOException, NumberFormatException {
 		//TODO ここから実装する
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		//System.out.print("input id>>");
 		String str = reader.readLine();
 		int num = Integer.parseInt(str);
 
-		return 0;
+		return num;
 
 	}
 
