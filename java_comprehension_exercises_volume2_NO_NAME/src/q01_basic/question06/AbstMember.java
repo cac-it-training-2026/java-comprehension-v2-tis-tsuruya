@@ -1,4 +1,4 @@
-package q01_basic.question06;
+package q01_basic.question06;//
 
 /**
  * 会員、非会員の基盤クラス

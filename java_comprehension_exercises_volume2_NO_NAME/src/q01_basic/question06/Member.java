@@ -1,4 +1,4 @@
-package q01_basic.question06;
+package q01_basic.question06;//
 
 class Member extends AbstMember {
 	private int id;
