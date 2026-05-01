@@ -1,7 +1,6 @@
-package q01_basic.question04;
+package q01_basic.question06;//
 
-class Member {
-	//TODO ここから実装する
+class Member extends AbstMember {
 	private int id;
 	private String password;
 	private String name;
@@ -23,14 +22,14 @@ class Member {
 	}
 
 	/**
-	 * @return passwordString
+	 * @return password
 	 */
 	public String getPassword() {
 		return password;
 	}
 
 	/**
-	 * @param passwordString セットする passwordString
+	 * @param password セットする password
 	 */
 	public void setPassword(String password) {
 		this.password = password;
@@ -99,8 +98,14 @@ class Member {
 		this.rank = rank;
 	}
 
+	@Override
+	public void buyItem() {
+		System.out.println(name + " purchased the item at 50% off");
+	}
+
+	@Override
 	public void showMember() {
-		System.out.println("---SHOW ALL MEMBERS---");
+		System.out.println("---SHOW MEMBER---");
 		System.out.println("***MEMBER DATA***");
 		System.out.println("id:" + id);
 		System.out.println("password:" + password);
