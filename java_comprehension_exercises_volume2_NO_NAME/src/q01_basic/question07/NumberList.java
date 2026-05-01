@@ -64,7 +64,9 @@ class NumberList {
 	public void removeIndexOfFirstHalf() {
 		//TODO ここから実装する
 		int halfsaize = (numbers.size() / 2);
+		//リストの半分のサイズまで削除
 		for (int i = 0; i < halfsaize; i++) {
+			//０番目を消していくからインデックスが自動でずれる
 			numbers.remove(0);
 		}
 

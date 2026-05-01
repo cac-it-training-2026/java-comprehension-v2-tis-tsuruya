@@ -1,19 +1,16 @@
-package q02_advanced.question01;
+package q02_advanced.question02;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Member {
-	//フィールドの定義
 	private int id;
 	private String password;
 	private String name;
 	private int age;
 	private int rank;
-	//Couponオブジェクトを複数まとめて管理するリスト
 	private List<Coupon> coupons;
 
-	//各フィールドのgetter,setter メソッド
 	/**
 	 * @return id
 	 */
@@ -99,19 +96,17 @@ public class Member {
 	}
 
 	/**
-	 * 引数なしのコンストラクタ
+	 * 
 	 */
 	public Member() {
 	}
 
 	/**
-	 * 引数ありのコンストラクタ
 	 * @param id
 	 * @param password
 	 * @param name
 	 * @param age
 	 * @param rank
-	 * @param coupons
 	 */
 	public Member(int id, String password, String name, int age, int rank) {
 		this.id = id;
@@ -119,30 +114,39 @@ public class Member {
 		this.name = name;
 		this.age = age;
 		this.rank = rank;
-		//クーポンを入れる箱を新しく作成
 		this.coupons = new ArrayList<>();
-
-		//2 つの Coupon クラスオブジェクトを生成し、コンストラクタを使用して、id、discountRate、description フィールドに
-		//値を代入->クーポンを２つ作成
-		Coupon coupon1 = new Coupon(1, 0.5, "最初の特典");
-		Coupon coupon2 = new Coupon(2, 0.25, "今月の特典");
-
-		//各生成オブジェクトを List 型の coupons フィールドに追加
-		this.coupons.add(coupon1);
-		this.coupons.add(coupon2);
 	}
 
-	//toString メソッドをオーバーライド
 	@Override
 	public String toString() {
 		return "Member [id=" + id + ", password=" + password + ", name=" + name + ", age=" + age + ", rank=" + rank
 				+ ", coupons=" + coupons + "]";
 	}
 
-	//showMember メソッドを定義
 	public void showMember() {
 		System.out.println(toString());
 		System.out.println("******************");
+	}
+
+	public static Member getInstance(int id, String password, String name, int age, int rank) {
+		//memberオブジェクト生成し、コンストラクタを使って会員の生成
+		Member member = new Member(id, password, name, age, rank);
+
+		//Couponを２つ作成
+		Coupon coupon1 = Coupon.getInstance(1, 0.5, "最初の特典");
+		Coupon coupon2 = Coupon.getInstance(2, 0.25, "今月の特典");
+
+		//Couponを入れるリストを作成
+		List<Coupon> coupons = new ArrayList<>();
+
+		//couponsリストに２つにクーポンをまとめて入れる
+		coupons.add(coupon1);
+		coupons.add(coupon2);
+
+		//memberにクーポンをセット。渡さないとmemberはクーポンをもてない
+		member.setCoupons(coupons);
+		//memberに返す
+		return member;
 	}
 
 }

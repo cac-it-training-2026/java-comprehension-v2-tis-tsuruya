@@ -1,12 +1,10 @@
-package q02_advanced.question01;
+package q02_advanced.question03;
 
 public class Coupon {
-	//フィールドの定義
 	private int id;
 	private double discountRate;
 	private String description;
 
-	//各フィールドのgetter,setterメソッドを定義
 	/**
 	 * @return id
 	 */
@@ -50,13 +48,12 @@ public class Coupon {
 	}
 
 	/**
-	 * 引数なしのコンストラクタ
+	 * 
 	 */
 	public Coupon() {
 	}
 
 	/**
-	 * 引数ありのコンストラクタ
 	 * @param id
 	 * @param discountRate
 	 * @param description
@@ -67,10 +64,15 @@ public class Coupon {
 		this.description = description;
 	}
 
-	//toString メソッドのオーバーライド
 	@Override
 	public String toString() {
 		return "Coupon [id=" + id + ", discountRate=" + discountRate + ", description=" + description + "]";
+	}
+
+	//staticなのでクラスから直接使える
+	public static Coupon getInstance(int id, double discountRate, String description) {
+		Coupon coupon = new Coupon(id, discountRate, description);
+		return coupon;
 	}
 
 }
